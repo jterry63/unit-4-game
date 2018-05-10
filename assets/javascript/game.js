@@ -12,10 +12,10 @@ var losses = 0;
 // Functions ---------------------------------------------
 
 function initialize() {
-    randomNumber = Math.floor(Math.random() * 120 + 19);
-    crystalOne = Math.floor(Math.random() * 12 + 1);
+    randomNumber = Math.floor(Math.random() * 100 + 18);
+    crystalOne = Math.floor(Math.random() * 10 + 2);
     crystalTwo = Math.floor(Math.random() * 12 + 1);
-    crystalThree = Math.floor(Math.random() * 12 + 1);
+    crystalThree = Math.floor(Math.random() * 14 + 1);
     crystalFour = Math.floor(Math.random() * 12 + 1);
     score = 0;
     $('#randomNumber').html(randomNumber)
@@ -28,7 +28,7 @@ function initialize() {
 
 };
 
-function outcome() {
+function winOrLose() {
     if (score === randomNumber) {
         alert("You Win!!! Press Ok to play again");
         wins++;
@@ -50,33 +50,34 @@ function startGame() {
     $('#crystal1').on("click", function () {
         score += crystalOne;
         $('#userScore').html(score);
-        outcome();
+        winOrLose();
     });
 
     $('#crystal2').on("click", function () {
         score += crystalTwo;
         $('#userScore').html(score);
-        outcome();
+        winOrLose();
     });
 
     $('#crystal3').on("click", function () {
 
         score += crystalThree;
         $('#userScore').html(score);
-        outcome();
+        winOrLose();
     });
 
     $('#crystal4').on("click", function () {
 
         score += crystalFour;
         $('#userScore').html(score);
-        outcome();
+        winOrLose();
         console.log("score: " + score);
     });
 
 };
 
 
+// Call functions ------------------------------------
+
 initialize();
 startGame();
-console.log("randomNumber :" + randomNumber);
